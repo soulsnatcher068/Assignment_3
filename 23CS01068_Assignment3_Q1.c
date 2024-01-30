@@ -1,4 +1,4 @@
-// Write a C program that takes an integer input from the user and [2 Mark]
+// Write a C program that takes an integer input from the user and 
 // determines whether the entered number is positive, negative, or zero.
 // Display a message indicating the result.
 #include<stdio.h>
