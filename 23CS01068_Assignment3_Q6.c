@@ -7,27 +7,31 @@
 // 45^2 = 2025 = 20 + 25 = 45
 // Yes; 45 is Kaprekar number
 #include<stdio.h>
-#include<math.h>
 void main()
 {
-    int x,y;
+    int x,y,j,t;
     printf("\nEnter number = ");
     scanf("%d",&x);
     y=x*x;
     int i;
     for(i=1;y!=0;i++) y/=10;
-    printf("\n%d",y);
+    // printf("\n%d",y);
     y=x*x;
-    printf("\n%d",i);
-    
-    if(i%2==0) printf("\nNot a Kaprekar number");
-    else 
+    // printf("\n%d",i);
+    t=10;
+
+    for(j=1;j<i;j++)
     {
         int a,b;
-        b=y/pow(10,i/2);
-        a=y-pow(10,i/2)*b;
-        printf("\n%d %d",a,b);
-        if( x == a+b  && a!=0 && b!=0 ) printf("\nIt is a Kaprekar number");
-        else printf("\nIt is not a Kaprekar number");
+        a=y/t;
+        b=y%t;
+        if(x==a+b) {
+            printf("\nIt is a kaprekar number");
+            break;
+        }
+        else t*=10;
     }
+    // printf("\n%d",j);
+    if(i==j) printf("\nThe number is not a Kaprekar number");
+    
 }
